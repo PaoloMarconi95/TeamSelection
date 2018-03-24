@@ -60,19 +60,19 @@ public class Griglia {
 			int idsquadra1 ;
 			int idsquadra2 ;
 			ArrayList<Integer> Estraibili = new ArrayList<Integer>() ;
-			for(int i = 0 ; i < squadre.length ; i++ )
+			for(int i = 0 ; i < squadre.length ; i++ ) {
+				if(squadre[i].disp[c][r])
 				Estraibili.add(squadre[i].id) ; // inserisco tutte le squadre nell'array ESTRAIBILI
-			do { // scelta prima squadra
-				int random = Metodi.numeroRandom(0, Estraibili.size() - 1) ;
-				idsquadra1 = Estraibili.get(random) ;
-				Estraibili.remove(squadre[idsquadra1].id) ;
-			}while( !squadre[idsquadra1].disp[c][r] ) ; // quando la squadra scelta è disponibile, si esce dal ciclo
-			do {
-				int random = Metodi.numeroRandom(0, Estraibili.size() - 1) ;
+			}
+			// scelta prima squadra
+			int random = Metodi.numeroRandom(0, Estraibili.size() - 1) ;
+			idsquadra1 = Estraibili.get(random) ;
+			Estraibili.remove(squadre[idsquadra1].id) ;
+			do { // Scelta seconda squadra
+				random = Metodi.numeroRandom(0, Estraibili.size() - 1) ;
 				idsquadra2 = Estraibili.get(random) ;
 				Estraibili.remove(squadre[idsquadra2].id) ;
-			}while ( !squadre[idsquadra2].disp[c][r] || 
-					squadre[idsquadra1].avversari.contains(squadre[idsquadra2])) ;
+			}while ( !squadre[idsquadra2].disp[c][r] || squadre[idsquadra1].avversari.contains(squadre[idsquadra2]) ) ;
 			}
 		}
 		
