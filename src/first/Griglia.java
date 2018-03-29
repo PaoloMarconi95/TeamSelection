@@ -52,22 +52,24 @@ public class Griglia {
 
 	
 	
-	public void stampaGriglia() {
+	public String stampaGriglia() {
+		String sol = "   " ;
 		short riga = 0 ;
 		for(int i = 0 ; i < this.max; i++)
-		System.out.print(" " + "Gioco" + (i + 1) );
-		System.out.println("");
+		sol = sol + "   g" + (i + 1) + "  " ;
+		sol = sol + "\n" ;
 		for(int c = 0 ; c < this.max ; c++){
 			if(c != 0)
-				System.out.println("");
+				sol = sol + "\n";
 			riga++ ;
 			for(int r = 0 ; r < this.max ; r++) {
 				if(r == 0)
-				System.out.print(riga + " " + this.tabella[c][r]);
+					sol = sol + riga + "   " + this.tabella[c][r] + "  " ;
 				else
-					System.out.print(" " + this.tabella[c][r]);
+					sol = sol + " " + this.tabella[c][r] ;
 			}
-		}	
+		}
+		return sol ;
 	}
 	
 	
