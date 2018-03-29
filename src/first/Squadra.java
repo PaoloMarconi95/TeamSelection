@@ -23,7 +23,7 @@ public class Squadra {
 	}
 	
 	public void inserisciAvversario(Squadra s){
-		this.avversari.add(s.id) ;
+		this.avversari.add(s) ;
 	}
 
 	
