@@ -21,7 +21,6 @@ public class Squadra {
 	
 	public void inserisciAvversario(Squadra s){
 		this.avversari.add(s.id) ;
-		s.avversari.add(this.id) ;
 	}
 
 	

@@ -72,7 +72,7 @@ public class Griglia {
 				random = Metodi.numeroRandom(0, Estraibili.size() - 1) ;
 				idsquadra2 = Estraibili.get(random) ;
 				Estraibili.remove(squadre[idsquadra2].id) ;
-			}while ( !squadre[idsquadra2].disp[c][r] || squadre[idsquadra1].avversari.contains(squadre[idsquadra2]) ) ;
+			}while ( squadre[idsquadra1].avversari.contains(squadre[idsquadra2]) ) ;
 			}
 		}
 		
