@@ -26,7 +26,8 @@ public class Main {
 				attempt++ ;
 				griglia.generaGriglia(Squadre) ;
 				cond = false ;
-			}catch(Exception e){
+			}catch(RetryException e){
+				System.out.print(e.getMessage());
 			}
 		}
 		griglia.stampaGriglia() ;

@@ -11,7 +11,7 @@ public class Griglia {
 		this.max = n/2 ;
 	}
 	
-	public void generaGriglia(Squadra[] squadre) throws Exception{
+	public void generaGriglia(Squadra[] squadre) throws RetryException{
 		for(int r = 0 ; r < this.max ; r++) {
 			for(int c = 0 ; c < this.max ; c++){
 				Squadra squadra1 ;
@@ -22,6 +22,8 @@ public class Griglia {
 						Estraibili.add(squadre[i]) ; // inserisco tutte le squadre nell'array ESTRAIBILI
 				}
 				int max = Estraibili.size() - 1 ;
+				/* if(max == 1) // se ho solo 1 elemento valido per la prima squadra, riparto da 0
+					throw new RetryException("Griglia non Valida") ; */									
 				int random = Metodi.numeroRandom(0, max) ;
 				squadra1 = Estraibili.get(random) ;
 				Estraibili.remove(squadra1) ;
